@@ -22,7 +22,7 @@ This repository is documentation-first and focuses on how the system is designed
 ---
 
 ## Architecture
-
+![Architecture Diagram](assets/architecture-diagram.png)
 High-level flow:
 
 1. **Source systems**
@@ -65,8 +65,14 @@ credit-ar-analytics/
    ├─ architecture-diagram.png
    └─ semantic-model-diagram.png
 ```
+
 ---
 
+## Semantic Model
+
+![Semantic Model](assets/semantic-model-diagram.png)
+
+The semantic model follows a hybrid star schema. Customer-level facts connect through the customer dimension, while credit agency data connects through the parent entity dimension.
 ## Core datasets
 
 The analytics model is built around several curated datasets used by the semantic model.
