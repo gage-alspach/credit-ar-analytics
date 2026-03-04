@@ -105,6 +105,42 @@ This project demonstrates several BI and analytics engineering capabilities:
 
 ---
 
+## Data contracts
+
+Each curated dataset in this architecture follows a defined data contract to ensure stability for downstream reporting and analytics.
+
+A dataset contract defines:
+
+- dataset grain
+- required keys
+- core output fields
+- expected validation checks
+- known limitations
+
+Examples:
+
+**Aging (Core AR)**  
+Grain: one row per CustomerNo  
+Key fields: CustomerNo, ParentName  
+Core outputs: invoice AR, aging buckets, open credits, exposure indicators  
+Validation: bucket totals equal invoice AR; exposure values non-negative
+
+**Payment Breakdown**  
+Grain: one row per CustomerNo, month, lateness bucket  
+Core outputs: applied payment amounts by timeliness bucket  
+Validation: no negative applied amounts; bucket ordering stable
+
+**Invoices Detail**  
+Grain: one row per open ledger item  
+Core outputs: posting date, due date, days past due, document identifiers  
+Validation: bucket totals equal open amount
+
+Full dataset specifications and validation logic are documented in:
+
+`docs/technical-design.md`
+
+---
+
 ## Documentation
 
 Full technical documentation is available in the `docs/` directory:
