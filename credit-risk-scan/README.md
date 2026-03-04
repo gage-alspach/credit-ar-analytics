@@ -19,8 +19,8 @@ Agency Detection
       │
       ▼
 Agency Parsers
-├─ dnb.py
-└─ ansonia.py
+├─ credit_agency1.py
+└─ credit_agency2.py
       │
       ▼
 Normalized Output Dataset
